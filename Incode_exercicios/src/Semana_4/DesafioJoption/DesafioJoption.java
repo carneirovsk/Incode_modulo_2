@@ -33,6 +33,30 @@ public class DesafioJoption {
                 } else {
                     JOptionPane.showMessageDialog(null, "Lista de tarefas:\n" + String.join("\n", listaTotal));
                 }
+            } else if (escolha.equals("Listar tarefas pendentes")) {
+                if (listaPendente.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Nenhuma tarefa pendente disponível.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Lista de tarefas:\n" + String.join("\n", listaPendente));
+                }
+            } else if (escolha.equals("Listar tarefas concluidas")) {
+                if (listaConcluida.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Nenhuma tarefa concluida disponível.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Lista de tarefas:\n" + String.join("\n", listaConcluida));
+                }
+            } else if (escolha.equals("Concluir Tarefa")) {
+                if (listaPendente.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Nenhuma tarefa para ser concluida disponível.");
+                }else {
+                    int i = Integer.parseInt(JOptionPane.showInputDialog(null, "Escolha o indice da tarefa\n" + String.join("\n", listaConcluida))) - 1;
+                    listaConcluida.add(listaPendente.get(i));
+                    listaPendente.remove(i);
+                    JOptionPane.showMessageDialog(null, "Tarefa Concluída!");
+                }
+            } else if (escolha.equals("Sair")) {
+                JOptionPane.showMessageDialog(null, "Você encerrou o programa!");
+                option = 6;
             }
         }
 
