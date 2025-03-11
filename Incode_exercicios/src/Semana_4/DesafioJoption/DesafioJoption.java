@@ -55,9 +55,14 @@ public class DesafioJoption {
                     if (listaPendente.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Nenhuma tarefa para ser concluida disponível.");
                     } else {
-                        int i = Integer.parseInt(JOptionPane.showInputDialog(null, "Escolha o indice da tarefa\n" + String.join("\n", listaConcluida))) - 1;
-                        listaConcluida.add(listaPendente.get(i));
-                        listaPendente.remove(i);
+                        String i = JOptionPane.showInputDialog(null, "Escolha o indice da tarefa\n" + String.join("\n", listaConcluida));
+                        if (i == null){
+                            break;
+                        }
+                        int index = Integer.parseInt(i) - 1 ;
+
+                        listaConcluida.add(listaPendente.get(index));
+                        listaPendente.remove(index);
                         JOptionPane.showMessageDialog(null, "Tarefa Concluída!");
                     }
                 }
