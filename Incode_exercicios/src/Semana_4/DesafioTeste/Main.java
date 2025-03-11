@@ -43,9 +43,8 @@ public class Main {
                 if (listaTarefasConcluidas.isEmpty()) {
                     System.out.println("Nenhuma tarefa concluida.");
                 } else {
-                    for (int i = 0; i < listaTarefasConcluidas.size(); i++) {
-                        System.out.printf("%d - %s\n", i+1, listaTarefasConcluidas.get(i));
-                    }
+                    for (int i = 0; i < listaTarefasConcluidas.size(); i++)
+                        System.out.printf("%d - %s\n", i + 1, listaTarefasConcluidas.get(i));
                 }
             }
             else if (option == 5) {
